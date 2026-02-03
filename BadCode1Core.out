@@ -1,0 +1,28 @@
+Removing mpi version 2021.6.0
+Use `module list` to view any remaining dependent modules.
+Loading mpi version 2021.6.0
+===================================================================================
+SLURM Job ID:            7128153
+Submit time:             Mon Feb 02 17:45:31 GMT 2026 (Unix Epoch time: 1770054331)
+Start time:              Mon Feb 02 17:47:26 GMT 2026 (Unix Epoch time: 1770054446)
+No. nodes:               1
+No. tasks:               20
+Job name:                PythonCode
+Account:                 teaching
+QoS:                     teaching
+Partition (queue):       teaching
+Submit directory:        /users/gmb22123/PH510
+Script name:             /users/gmb22123/PH510/generic-singlecore.sh
+Master node:             wee19
+Nodes used:              wee19
+Task distribution:       
+===================================================================================
+
+Integral 3.1415926536
+Computation time: 38.713611 seconds
+Number of processes involved: 1
+===================================================================================
+SLURM job 7128153 ended:     Mon Feb 02 17:48:08 GMT 2026 (Unix Epoch time: 1770054488)
+This is an estimated end time using the 'date' command from node wee19.hpc.strath.ac.uk
+For accurate timings, use 'sacct -j 7128153 -X --format=Submit,Start,End,Elapsed'
+======================================================================================
