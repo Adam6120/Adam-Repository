@@ -1,0 +1,85 @@
+Removing mpi version 2021.6.0
+Use `module list` to view any remaining dependent modules.
+Loading mpi version 2021.6.0
+===================================================================================
+SLURM Job ID:            7128167
+Submit time:             Mon Feb 02 19:22:48 GMT 2026 (Unix Epoch time: 1770060168)
+Start time:              Mon Feb 02 19:23:27 GMT 2026 (Unix Epoch time: 1770060207)
+No. nodes:               1
+No. tasks:               20
+Job name:                PythonCode
+Account:                 teaching
+QoS:                     teaching
+Partition (queue):       teaching
+Submit directory:        /users/gmb22123/PH510
+Script name:             /users/gmb22123/PH510/generic-singlecore.sh
+Master node:             wee19
+Nodes used:              wee19
+Task distribution:       
+===================================================================================
+
+Integral 3.1415926536
+Computation time: 27.701327 seconds
+Number of processes involved: 1
+Integral 3.1415926536
+Computation time: 14.236657 seconds
+Number of processes involved: 2
+Integral 3.1415926536
+Computation time: 9.957412 seconds
+Number of processes involved: 3
+Integral 3.1415926536
+Computation time: 7.466612 seconds
+Number of processes involved: 4
+Integral 3.1415926536
+Computation time: 6.092565 seconds
+Number of processes involved: 5
+Integral 3.1415926536
+Computation time: 5.077459 seconds
+Number of processes involved: 6
+Integral 3.1415926536
+Computation time: 4.469949 seconds
+Number of processes involved: 7
+Integral 3.1415926536
+Computation time: 3.854907 seconds
+Number of processes involved: 8
+Integral 3.1415926536
+Computation time: 3.615073 seconds
+Number of processes involved: 9
+Integral 3.1415926536
+Computation time: 3.236667 seconds
+Number of processes involved: 10
+Integral 3.1415926536
+Computation time: 3.084462 seconds
+Number of processes involved: 11
+Integral 3.1415926536
+Computation time: 2.819256 seconds
+Number of processes involved: 12
+Integral 3.1415926536
+Computation time: 2.753138 seconds
+Number of processes involved: 13
+Integral 3.1415926536
+Computation time: 2.687460 seconds
+Number of processes involved: 14
+Integral 3.1415926536
+Computation time: 2.487351 seconds
+Number of processes involved: 15
+Integral 3.1415926536
+Computation time: 2.324967 seconds
+Number of processes involved: 16
+Integral 3.1415926536
+Computation time: 2.257404 seconds
+Number of processes involved: 17
+Integral 3.1415926536
+Computation time: 2.141815 seconds
+Number of processes involved: 18
+Integral 3.1415926536
+Computation time: 2.105283 seconds
+Number of processes involved: 19
+Integral 3.1415926536
+Computation time: 2.035501 seconds
+Number of processes involved: 20
+===================================================================================
+SLURM job 7128167 ended:     Mon Feb 02 19:26:34 GMT 2026 (Unix Epoch time: 1770060394)
+This is an estimated end time using the 'date' command from node wee19.hpc.strath.ac.uk
+For accurate timings, use 'sacct -j 7128167 -X --format=Submit,Start,End,Elapsed'
+======================================================================================
