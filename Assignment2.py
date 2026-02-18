@@ -1,8 +1,9 @@
-from vectorclass import Vector, ComplexVector
 import math
 import cmath #Module that handles complex numbers
+from vectorclass import Vector, ComplexVector
 
-# Area of a Triangle: 1/2 * b * h 
+
+# Area of a Triangle: 1/2 * b * H
 
 # Triangle 1
 A = Vector(0,0,0)
@@ -117,38 +118,38 @@ def N_Function(x,y,z):
 
 
 #Defining Partial Derivatives for Divergence and Curl
-#Finite difference requires us to define an increment h to compare the function by
+#Finite difference requires us to define an increment H to compare the function by
 #0.1 as a placeholder, not sure which increment to pick
-h = 0.001
+H = 0.001
 
-def partialx(V, x, y, z):
+def partialx(v, x, y, z):
     """
-    Partial derivative functions for differentating a vector V with respect to x, y and z respectively
+    Partial derivative functions for differentating a vector v with respect to x, y and z respectively
     """
-    return (V(x+h, y, z) - V(x-h, y, z)) * (1/(2*h))    #Need to call y and z to keep them fixed because we're in 3D.
+    return (v(x+H, y, z) - v(x-H, y, z)) * (1/(2*H))    #Need to call y and z to keep them fixed because we're in 3D.
             
-def partialy(V, x, y, z):
-    return (V(x, y+h, z) - V(x, y-h, z)) * (1/(2*h))
+def partialy(v, x, y, z):
+    return (v(x, y+H, z) - v(x, y-H, z)) * (1/(2*H))
 
-def partialz(V, x, y, z):
-    return (V(x, y, z+h) - V(x, y, z-h)) * (1/(2*h))   
+def partialz(v, x, y, z):
+    return (v(x, y, z+H) - v(x, y, z-H)) * (1/(2*H)) 
 
-#Divergence (del dot V)
-def divergence(V, x, y, z):
-    delV_dx = partialx(V, x, y, z)
-    delV_dy = partialy(V, x, y, z)
-    delV_dz = partialz(V, x ,y, z)
-    return delV_dx.x + delV_dy.y + delV_dz.z
+#Divergence (del dot v)
+def divergence(v, x, y, z):
+    del_v_dx = partialx(v, x, y, z)
+    del_v_dy = partialy(v, x, y, z)
+    del_v_dz = partialz(v, x ,y, z)
+    return del_v_dx.x + del_v_dy.y + del_v_dz.z
 
-#Curl (del cross V)
-def curl(V, x, y, z):
-    delV_dx = partialx(V, x, y, z)
-    delV_dy = partialy(V, x, y, z)
-    delV_dz = partialz(V, x ,y, z)
+#Curl (del cross v)
+def curl(v, x, y, z):
+    del_v_dx = partialx(v, x, y, z)
+    del_v_dy = partialy(v, x, y, z)
+    del_v_dz = partialz(v, x ,y, z)
     
-    curl_x = delV_dy.z - delV_dz.y
-    curl_y = delV_dz.x - delV_dx.z
-    curl_z = delV_dx.y - delV_dy.x
+    curl_x = del_v_dy.z - del_v_dz.y
+    curl_y = del_v_dz.x - del_v_dx.z
+    curl_z = del_v_dx.y - del_v_dy.x
     
     return ComplexVector(curl_x, curl_y, curl_z)
 
@@ -162,17 +163,17 @@ for point in points: #Function for testing Hansen Vectors
     M = M_Function(x, y, z)
     N = N_Function(x, y, z)
     
-    divM = divergence(M_Function, x, y, z)
+    divM = divergence(m_function, x, y, z)
     print(f"∇·M = {divM.real:}", "Expected: 0.0") #.real gets rid of the imaginary part to look cleaner
     
     divN = divergence(N_Function, x, y, z)
     print(f"∇·N = {divN.real:}","Expected: 0.0") #.real gets rid of the imaginary part to look cleaner
     
-    curlM = curl(M_Function, x, y, z) 
+    curlM = curl(M_Function, x, y, z)
     expectationM = N / kmag
     print(f"∇×M = {curlM}", f"Expected: {expectationM}")
     
-    curlN = curl(N_Function, x, y, z) 
+    curlN = curl(n_function, x, y, z)
     expectationN = M / kmag
     print(f"∇×N = {curlN}", f"Expected: {expectationN}")
     
