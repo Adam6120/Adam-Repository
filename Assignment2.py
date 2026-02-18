@@ -1,7 +1,7 @@
 import math
 import cmath #Module that handles complex numbers
 from vectorclass import Vector, ComplexVector
-
+#Python Version: python3 --version: Python 3.9.21
 
 # Area of a Triangle: 1/2 * b * H
 
