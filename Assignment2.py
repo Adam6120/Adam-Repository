@@ -98,7 +98,7 @@ kmag = k.magnitude()
 #print("|k|:",kmag)
 
 #Defining Hansen Vectors
-def M_Function(x,y,z):
+def m_function(x,y,z):
     """
     Hansen Vector M = [1,0,0] * exp(i*k dot x)
     """
@@ -107,7 +107,7 @@ def M_Function(x,y,z):
     exponential = cmath.exp(1j * kdotx)
     return ComplexVector(exponential, 0, 0)
 
-def N_Function(x,y,z):
+def n_function(x,y,z):
     """
     Hansen Vector N = [0,1,0] * exp(i*k dot x)
     """
@@ -160,16 +160,16 @@ points = [(0, 0, 0), (1, 0, 0), (10,10,10), (29, 56, 450)] #List of points for s
 for point in points: #Function for testing Hansen Vectors
     x, y, z = point
     print(f"Point: ({x}, {y}, {z})")
-    M = M_Function(x, y, z)
-    N = N_Function(x, y, z)
+    M = m_function(x, y, z)
+    N = n_function(x, y, z)
     
     divM = divergence(m_function, x, y, z)
     print(f"∇·M = {divM.real:}", "Expected: 0.0") #.real gets rid of the imaginary part to look cleaner
     
-    divN = divergence(N_Function, x, y, z)
+    divN = divergence(n_function, x, y, z)
     print(f"∇·N = {divN.real:}","Expected: 0.0") #.real gets rid of the imaginary part to look cleaner
     
-    curlM = curl(M_Function, x, y, z)
+    curlM = curl(m_function, x, y, z)
     expectationM = N / kmag
     print(f"∇×M = {curlM}", f"Expected: {expectationM}")
     
